@@ -1252,6 +1252,19 @@ footer {
 
 <script>
 const NAVBAR_H = 72;
+  const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+hamburger.addEventListener('click', function() {
+  mobileMenu.classList.toggle('open');
+  const isOpen = mobileMenu.classList.contains('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', false);
+}
 
 // ─── SMOOTH SCROLL — intercepts ALL internal anchor clicks ───
 function smoothScrollTo(targetId) {
